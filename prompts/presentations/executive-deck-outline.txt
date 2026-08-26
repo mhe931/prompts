@@ -1,0 +1,8 @@
+﻿Prepare a 10-slide executive presentation structure.
+
+Include:
+- Opening problem statement
+- 3 strategic options
+- Recommendation
+- Risks and mitigations
+- Next 30-60-90 day plan
