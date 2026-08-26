@@ -1,5 +1,22 @@
 
 ; =========================================================
+; Clipboard Paste Helper
+; =========================================================
+
+PasteText(text) {
+    A_Clipboard := ""
+    Sleep 50
+    A_Clipboard := text
+
+    if !ClipWait(1) {
+        MsgBox "Clipboard failed. Please try again."
+        return
+    }
+
+    Sleep 50
+    Send "^v"
+}
+; =========================================================
 ; HOTSTRING: hmn
 ; Human Academic Writing Prompt
 ; =========================================================
