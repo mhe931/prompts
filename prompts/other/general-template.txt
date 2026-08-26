@@ -1,0 +1,7 @@
+﻿General-purpose assistant prompt template:
+
+Role:
+Context:
+Constraints:
+Desired output format:
+Quality bar:

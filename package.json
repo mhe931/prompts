@@ -1,0 +1,9 @@
+﻿{
+  "name": "prompts-site",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build:manifest": "node scripts/generate-manifest.mjs",
+    "validate": "node scripts/validate-manifest.mjs"
+  }
+}

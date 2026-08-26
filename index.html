@@ -1,0 +1,42 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Prompt Library</title>
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#prompt-viewer">Skip to prompt content</a>
+  <header class="topbar">
+    <button id="menu-toggle" class="icon-btn" aria-label="Toggle navigation">☰</button>
+    <h1>Prompt Library</h1>
+    <div class="topbar-actions">
+      <input id="search" type="search" placeholder="Search prompts..." aria-label="Search prompts" />
+      <button id="theme-toggle" class="icon-btn" aria-label="Toggle theme">◐</button>
+    </div>
+  </header>
+  <div class="layout">
+    <aside id="sidebar" class="sidebar" aria-label="Prompt navigation">
+      <nav>
+        <h2>Categories</h2>
+        <div id="categories" class="categories"></div>
+        <h2>Prompts</h2>
+        <ul id="prompt-list" class="prompt-list"></ul>
+      </nav>
+    </aside>
+    <main id="prompt-viewer" tabindex="-1" class="viewer">
+      <div class="viewer-head">
+        <div>
+          <h2 id="prompt-title">Select a prompt</h2>
+          <p id="prompt-description"></p>
+        </div>
+        <button id="copy-btn" disabled>Copy</button>
+      </div>
+      <div id="status" class="status" aria-live="polite"></div>
+      <pre id="prompt-content" class="content">Choose a prompt from the list.</pre>
+    </main>
+  </div>
+  <script type="module" src="assets/app.js"></script>
+</body>
+</html>
