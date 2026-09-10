@@ -20,8 +20,6 @@ function basePath() {
 }
 
 function assetPath(relativePath) {
-  const siteBase = basePath();
-  if (siteBase === '/prompts/') return relativePath.replace(/^prompts\//, '');
   return relativePath;
 }
 
