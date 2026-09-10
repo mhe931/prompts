@@ -16,8 +16,9 @@ Production-quality lightweight prompt-library site for GitHub Pages.
 ## Content management
 
 - Add prompt files under `prompts/<category>/` as `.md` or `.txt`.
-- Filename becomes title unless front matter sets `title` and `description`.
-- Categories are inferred from subdirectory name.
+- Every prompt must include front matter with `name`, `description`, `tags`, and `category`.
+- Every prompt body must contain `GOAL`, `CONTEXT`, `GUARDRAILS`, `EXECUTION`, `VERIFICATION`, and `OUTPUT FORMAT` sections.
+- The category must match the prompt's immediate parent directory.
 - Run `node scripts/generate-manifest.mjs` after add/rename/delete.
 
 ## Deployment
@@ -30,3 +31,4 @@ Run:
 
 - `node scripts/generate-manifest.mjs`
 - `node scripts/validate-manifest.mjs`
+- `npm test`

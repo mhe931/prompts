@@ -19,6 +19,12 @@ function basePath() {
   return p.endsWith('/') ? p : `${p.substring(0, p.lastIndexOf('/') + 1)}`;
 }
 
+function assetPath(relativePath) {
+  const siteBase = basePath();
+  if (siteBase === '/prompts/') return relativePath.replace(/^prompts\//, '');
+  return relativePath;
+}
+
 function setTheme(next) {
   root.setAttribute('data-theme', next);
   localStorage.setItem('theme', next);
@@ -68,7 +74,14 @@ function renderList() {
     const b = document.createElement('button');
     b.className = `prompt-btn${state.selectedId === item.id ? ' active' : ''}`;
     b.type = 'button';
-    b.innerHTML = `<strong>${item.title}</strong>${item.description ? `<small>${item.description}</small>` : ''}`;
+    const strong = document.createElement('strong');
+    strong.textContent = safeText(item.title);
+    b.appendChild(strong);
+    if (item.description) {
+      const small = document.createElement('small');
+      small.textContent = item.description;
+      b.appendChild(small);
+    }
     b.addEventListener('click', () => selectPrompt(item.id, true));
     li.appendChild(b);
     listEl.appendChild(li);
@@ -84,7 +97,7 @@ async function selectPrompt(id, push = false) {
   statusEl.textContent = 'Loading prompt...';
   copyBtn.disabled = true;
   try {
-    const res = await fetch(new URL(item.path, window.location.origin + basePath()));
+    const res = await fetch(new URL(assetPath(item.path), window.location.origin + basePath()));
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const text = await res.text();
     contentEl.textContent = text;
@@ -133,7 +146,7 @@ async function init() {
   initTheme();
   statusEl.textContent = 'Loading manifest...';
   try {
-    const manifestUrl = new URL('prompts/manifest.json', window.location.origin + basePath());
+    const manifestUrl = new URL(assetPath('prompts/manifest.json'), window.location.origin + basePath());
     const res = await fetch(manifestUrl);
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     state.manifest = await res.json();

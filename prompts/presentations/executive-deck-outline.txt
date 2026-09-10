@@ -1,8 +1,35 @@
-﻿Prepare a 10-slide executive presentation structure.
+---
+name: Executive Deck Outline
+description: Produce a 10-slide executive presentation structure covering a problem, strategic options, recommendation, risks, and a 30-60-90 day plan.
+tags: [presentations, executive-summary, strategy]
+category: presentations
+---
 
-Include:
-- Opening problem statement
-- 3 strategic options
-- Recommendation
-- Risks and mitigations
-- Next 30-60-90 day plan
+## GOAL
+
+Prepare a 10-slide executive presentation structure for the given topic.
+
+## CONTEXT
+
+The audience is executive stakeholders who need a concise strategic narrative rather than a detailed technical breakdown. Use the topic, business context, and constraints supplied by the user.
+
+## GUARDRAILS
+
+- Keep the outline to 10 slides; do not pad with filler slides.
+- Base options and risks on the information provided; flag unsupported assumptions explicitly instead of inventing data.
+
+## EXECUTION
+
+1. Open with a clear problem statement slide.
+2. Present exactly 3 strategic options with a brief comparison.
+3. State a single clear recommendation.
+4. List key risks and their mitigations.
+5. Close with a 30-60-90 day action plan.
+
+## VERIFICATION
+
+Confirm the outline has 10 slides, includes all five required elements (problem, 3 options, recommendation, risks/mitigations, 30-60-90 plan), and stays free of unsupported claims.
+
+## OUTPUT FORMAT
+
+Return a numbered slide-by-slide outline (1 through 10), each with a slide title and 2-4 bullet points of content.

@@ -1,7 +1,32 @@
-﻿General-purpose assistant prompt template:
+---
+name: General Purpose Assistant Prompt Template
+description: A fill-in-the-blank template for drafting a task-specific assistant prompt with role, context, constraints, and output format.
+tags: [template, meta-prompt, general-purpose]
+category: other
+---
 
-Role:
-Context:
-Constraints:
-Desired output format:
-Quality bar:
+## GOAL
+
+Fill in this template to produce a complete, task-specific prompt for a general-purpose AI assistant.
+
+## CONTEXT
+
+[Describe the situation, audience, and any background the assistant needs before starting the task.]
+
+## GUARDRAILS
+
+- [List constraints: things to avoid, required accuracy/safety rules, scope limits, or tone restrictions.]
+- Do not invent facts, sources, or capabilities not supported by the provided context.
+
+## EXECUTION
+
+- Role: [Define the role/persona the assistant should take, only if it improves the result.]
+- Task: [State the concrete task the assistant must perform, step by step if useful.]
+
+## VERIFICATION
+
+[State how to confirm the output meets the quality bar, e.g., a checklist of required elements, factual checks, or review criteria.]
+
+## OUTPUT FORMAT
+
+[Specify the exact format, structure, length, and style of the expected output.]

@@ -3,7 +3,9 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "build": "npm run build:manifest",
     "build:manifest": "node scripts/generate-manifest.mjs",
+    "test": "npm run validate",
     "validate": "node scripts/validate-manifest.mjs"
   }
 }

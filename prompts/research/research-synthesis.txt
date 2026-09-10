@@ -1,7 +1,35 @@
-﻿Create a research synthesis on the topic below.
+---
+name: Research Synthesis Brief
+description: Synthesize 5-8 sources on a topic into a structured summary highlighting consensus, disagreement, and evidence quality.
+tags: [research, synthesis, literature-review]
+category: research
+---
 
-Requirements:
-- Summarize 5-8 sources
-- Identify consensus and disagreement
-- Highlight evidence quality
-- End with open questions
+## GOAL
+
+Create a research synthesis on the topic provided by the user.
+
+## CONTEXT
+
+The synthesis draws on 5-8 sources supplied or discoverable by the assistant. It should help the reader quickly understand the current state of knowledge and where uncertainty remains.
+
+## GUARDRAILS
+
+- Only summarize claims that are traceable to a specific source; do not fabricate sources, findings, or statistics.
+- Clearly separate consensus from disagreement and note when evidence is weak or contested.
+
+## EXECUTION
+
+1. Identify and briefly summarize 5-8 relevant sources on the topic.
+2. Identify points of consensus across sources.
+3. Identify points of disagreement or conflicting findings.
+4. Assess the quality of the evidence for major claims (study design, sample size, recency, potential bias).
+5. End with a list of open questions the sources leave unresolved.
+
+## VERIFICATION
+
+Confirm every summarized claim is attributed to a source, consensus and disagreement are both addressed, evidence quality is assessed, and open questions are listed.
+
+## OUTPUT FORMAT
+
+Return sections in this order: Source Summaries, Consensus, Disagreement, Evidence Quality Assessment, Open Questions.

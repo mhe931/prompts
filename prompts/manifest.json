@@ -1,0 +1,233 @@
+{
+  "generatedAt": "2026-09-10T14:20:19.535Z",
+  "categories": [
+    "coding",
+    "other",
+    "presentations",
+    "research",
+    "writing"
+  ],
+  "count": 14,
+  "prompts": [
+    {
+      "id": "coding/code-review",
+      "slug": "code-review",
+      "category": "coding",
+      "file": "code_review.md",
+      "path": "prompts/coding/code_review.md",
+      "name": "Autonomous Code Review and Remediation",
+      "title": "Autonomous Code Review and Remediation",
+      "description": "Drive an end-to-end code review that inspects a codebase, fixes confirmed defects, adds regression tests, and delivers an evidence-based report.",
+      "tags": [
+        "code-review",
+        "security",
+        "refactoring",
+        "testing",
+        "agent"
+      ]
+    },
+    {
+      "id": "coding/prompt-for-agent",
+      "slug": "prompt-for-agent",
+      "category": "coding",
+      "file": "prompt_for_agent.md",
+      "path": "prompts/coding/prompt_for_agent.md",
+      "name": "Coding Agent Prompt Compiler",
+      "title": "Coding Agent Prompt Compiler",
+      "description": "Compile a preceding implementation task into one concise execution prompt for a primary coding agent with end-to-end ownership.",
+      "tags": [
+        "prompt-engineering",
+        "coding-agent",
+        "orchestration",
+        "meta-prompt"
+      ]
+    },
+    {
+      "id": "coding/documentation",
+      "slug": "documentation",
+      "category": "coding",
+      "file": "documentation.md",
+      "path": "prompts/coding/documentation.md",
+      "name": "Repository Documentation Audit and Continuity Owner",
+      "title": "Repository Documentation Audit and Continuity Owner",
+      "description": "Audit and complete a project's documentation end-to-end so a new developer, stakeholder, or AI agent can operate and continue it without prior chat history.",
+      "tags": [
+        "documentation",
+        "agents-md",
+        "project-continuity",
+        "technical-writing"
+      ]
+    },
+    {
+      "id": "coding/save-project",
+      "slug": "save-project",
+      "category": "coding",
+      "file": "save_project.md",
+      "path": "prompts/coding/save_project.md",
+      "name": "Save Project Status to Memory",
+      "title": "Save Project Status to Memory",
+      "description": "Persist the current project status to project memory so a new session can resume without prior chat history.",
+      "tags": [
+        "continuity",
+        "memory",
+        "session-handoff"
+      ]
+    },
+    {
+      "id": "coding/prompt",
+      "slug": "prompt",
+      "category": "coding",
+      "file": "prompt.md",
+      "path": "prompts/coding/prompt.md",
+      "name": "Universal Prompt Compiler",
+      "title": "Universal Prompt Compiler",
+      "description": "Compile a preceding conversation's task into one optimized, execution-ready prompt for a target AI system.",
+      "tags": [
+        "prompt-engineering",
+        "meta-prompt",
+        "compiler"
+      ]
+    },
+    {
+      "id": "coding/initial-project",
+      "slug": "initial-project",
+      "category": "coding",
+      "file": "initial_project.md",
+      "path": "prompts/coding/initial_project.md",
+      "name": "Windows Gesture-Controlled Virtual Mouse Bootstrap",
+      "title": "Windows Gesture-Controlled Virtual Mouse Bootstrap",
+      "description": "Bootstrap a production-quality, camera-based hand-gesture mouse controller for Windows with an architecture reusable for a later Android phase.",
+      "tags": [
+        "computer-vision",
+        "windows",
+        "project-bootstrap",
+        "gesture-control",
+        "agent"
+      ]
+    },
+    {
+      "id": "other/ahk-file",
+      "slug": "ahk-file",
+      "category": "other",
+      "file": "ahk_file.md",
+      "path": "prompts/other/ahk_file.md",
+      "name": "AutoHotkey Clipboard Prompt Launcher",
+      "title": "AutoHotkey Clipboard Prompt Launcher",
+      "description": "Maintain an AutoHotkey v2 script that expands hotstrings into full prompt texts and pastes them via the clipboard.",
+      "tags": [
+        "autohotkey",
+        "automation",
+        "windows",
+        "prompt-engineering",
+        "utility-script"
+      ]
+    },
+    {
+      "id": "other/general-template",
+      "slug": "general-template",
+      "category": "other",
+      "file": "general-template.txt",
+      "path": "prompts/other/general-template.txt",
+      "name": "General Purpose Assistant Prompt Template",
+      "title": "General Purpose Assistant Prompt Template",
+      "description": "A fill-in-the-blank template for drafting a task-specific assistant prompt with role, context, constraints, and output format.",
+      "tags": [
+        "template",
+        "meta-prompt",
+        "general-purpose"
+      ]
+    },
+    {
+      "id": "other/write-resume",
+      "slug": "write-resume",
+      "category": "other",
+      "file": "write_resume.md",
+      "path": "prompts/other/write_resume.md",
+      "name": "Tailored Resume and Job Application Package",
+      "title": "Tailored Resume and Job Application Package",
+      "description": "Generate an evidence-based, ATS-optimized resume, cover letter, interview prep, and salary assessment tailored to a specific job posting.",
+      "tags": [
+        "resume",
+        "job-application",
+        "career",
+        "ats"
+      ]
+    },
+    {
+      "id": "other/mouse-move",
+      "slug": "mouse-move",
+      "category": "other",
+      "file": "mouse_move.md",
+      "path": "prompts/other/mouse_move.md",
+      "name": "Windows Idle-Prevention Mouse Jiggler Script",
+      "title": "Windows Idle-Prevention Mouse Jiggler Script",
+      "description": "Generate a Windows batch launcher and PowerShell script that subtly moves the mouse to prevent idle/lock without disrupting active user input.",
+      "tags": [
+        "automation",
+        "powershell",
+        "windows",
+        "utility-script"
+      ]
+    },
+    {
+      "id": "presentations/executive-deck-outline",
+      "slug": "executive-deck-outline",
+      "category": "presentations",
+      "file": "executive-deck-outline.txt",
+      "path": "prompts/presentations/executive-deck-outline.txt",
+      "name": "Executive Deck Outline",
+      "title": "Executive Deck Outline",
+      "description": "Produce a 10-slide executive presentation structure covering a problem, strategic options, recommendation, risks, and a 30-60-90 day plan.",
+      "tags": [
+        "presentations",
+        "executive-summary",
+        "strategy"
+      ]
+    },
+    {
+      "id": "research/research-synthesis",
+      "slug": "research-synthesis",
+      "category": "research",
+      "file": "research-synthesis.txt",
+      "path": "prompts/research/research-synthesis.txt",
+      "name": "Research Synthesis Brief",
+      "title": "Research Synthesis Brief",
+      "description": "Synthesize 5-8 sources on a topic into a structured summary highlighting consensus, disagreement, and evidence quality.",
+      "tags": [
+        "research",
+        "synthesis",
+        "literature-review"
+      ]
+    },
+    {
+      "id": "writing/blog-post-brief",
+      "slug": "blog-post-brief",
+      "category": "writing",
+      "file": "blog-post-brief.md",
+      "path": "prompts/writing/blog-post-brief.md",
+      "name": "Blog Post Brief",
+      "title": "Blog Post Brief",
+      "description": "Generate a concise one-page blog post brief with audience, message, outline, and distribution framing.",
+      "tags": [
+        "content-strategy",
+        "blog",
+        "brief"
+      ]
+    },
+    {
+      "id": "writing/humanize-for-me",
+      "slug": "humanize-for-me",
+      "category": "writing",
+      "file": "humanize_for_me.md",
+      "path": "prompts/writing/humanize_for_me.md",
+      "name": "Humanize Academic Writing Voice",
+      "title": "Humanize Academic Writing Voice",
+      "description": "Rewrite academic text in the natural, human voice of an international graduate student, avoiding AI-sounding phrasing.",
+      "tags": [
+        "writing-style",
+        "academic-writing",
+        "voice"
+      ]
+    }
+  ]
+}

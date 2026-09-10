@@ -1,3 +1,52 @@
+---
+name: AutoHotkey Clipboard Prompt Launcher
+description: Maintain an AutoHotkey v2 script that expands hotstrings into full prompt texts and pastes them via the clipboard.
+tags: [autohotkey, automation, windows, prompt-engineering, utility-script]
+category: other
+---
+
+## GOAL
+
+Build and maintain an AutoHotkey v2 script that expands short hotstrings into complete, ready-to-use prompt texts and pastes them into the active application via the clipboard.
+
+## CONTEXT
+
+The script runs under AutoHotkey v2 on Windows and is triggered by typing a hotstring (for example hmn, rsm, sss, prm, wpp) in any text field. Each hotstring builds a full prompt string in memory and hands it to a shared PasteText helper, which places the text on the clipboard and sends Ctrl+V. Some hotstrings (rsm, prm, wpp) first collect one piece of user input via InputBox (job description/URL, or target application/agent name) and interpolate it into the generated prompt. The prompt bodies embedded in this script correspond to the standalone prompts write_resume.md, save_project.md, prompt.md, prompt_for_agent.md, and humanize_for_me.md elsewhere in this library; keep their wording synchronized when either side changes.
+
+## GUARDRAILS
+
+- Preserve the exact hotstring trigger names (hmn, rsm, sss, prm, wpp) and the PasteText clipboard/paste mechanism.
+- Always clear the clipboard, wait briefly, set the new text, call ClipWait, and show an error MsgBox on failure before sending Ctrl+V; never send Ctrl+V without a successful ClipWait.
+- Cancel cleanly (return without pasting) when an InputBox is dismissed with Cancel or left blank where a value is required.
+- Do not remove or weaken the accuracy, ethics, or scope-limiting language embedded in the generated prompts (for example the resume prompt's anti-fabrication rules).
+- Keep the script self-contained AutoHotkey v2 syntax; do not introduce external dependencies.
+
+## EXECUTION
+
+1. Define a shared PasteText(text) function that stages the clipboard, waits for it to be ready, and sends Ctrl+V, showing a MsgBox if the clipboard fails.
+2. Implement each hotstring as its own block:
+   - hmn: pastes the human-academic-writing-style prompt directly.
+   - rsm: prompts for a job description/URL via InputBox, builds the full tailored resume/cover-letter/interview/salary prompt (matching other/write_resume.md), appends the captured job description, and pastes it.
+   - sss: pastes the fixed save-project-status prompt directly.
+   - prm: prompts for a target application/model via InputBox (defaulting to "use the current AI system/model" if blank), builds the universal prompt-compiler prompt (matching coding/prompt.md), and pastes it.
+   - wpp: prompts for a target coding agent/environment via InputBox (defaulting to "use the current coding agent/environment" if blank), builds the coding-agent prompt-compiler prompt (matching coding/prompt_for_agent.md), and pastes it.
+3. When adding a new hotstring, follow the same pattern: collect only the minimum required input, build the text with string concatenation, and end with a call to PasteText.
+4. Keep this file and the corresponding standalone prompt files consistent; update both sides when the wording of a shared prompt changes.
+
+## VERIFICATION
+
+- Manually trigger each hotstring in a text editor and confirm the expected prompt is pasted, including correctly interpolated InputBox values.
+- Confirm Cancel/blank InputBox responses abort without pasting or showing errors.
+- Confirm the clipboard-failure path shows the MsgBox and does not attempt to paste.
+- Diff the embedded prompt text against the corresponding standalone prompt file after any edit to keep them in sync.
+
+## OUTPUT FORMAT
+
+Return the complete AutoHotkey v2 script as a single fenced code block, ready to save as a .ahk file and run.
+
+Reference implementation:
+
+```autohotkey
 
 ; =========================================================
 ; Clipboard Paste Helper
@@ -79,7 +128,7 @@ PasteText(text) {
     rsmText .= "`n`nWRITING STYLE"
     rsmText .= "`n- Use direct, modern, natural, Master's-level professional English."
     rsmText .= "`n- Write in a confident but credible tone."
-    rsmText .= "`n- Avoid generic AI language, inflated adjectives, and clichés such as pioneered, tapestry, cutting-edge, world-class, revolutionary, visionary, game-changing, or similar wording."
+    rsmText .= "`n- Avoid generic AI language, inflated adjectives, and cliches such as pioneered, tapestry, cutting-edge, world-class, revolutionary, visionary, game-changing, or similar wording."
     rsmText .= "`n- Avoid empty claims such as results-driven, dynamic professional, proven track record, and passionate about technology unless supported by evidence."
     rsmText .= "`n- Prefer concise sentences, strong verbs, specific technologies, business context, and measurable outcomes."
     rsmText .= "`n- Make the writing sound human and suitable for a Finnish or international European employer."
@@ -116,7 +165,7 @@ PasteText(text) {
     rsmText .= "`n- Image scraping, annotation extraction, mask generation, deterministic mask cleaning, object detection, classification, human review, and model-retraining workflows."
     rsmText .= "`n- Video-frame processing and latency optimization using asynchronous Python."
     rsmText .= "`n- Automated sensor, image, and telemetry collection."
-    rsmText .= "`n- Industrial inspection work related to UPM and Wärtsilä contexts, described only at a non-confidential level."
+    rsmText .= "`n- Industrial inspection work related to UPM and Wartsila contexts, described only at a non-confidential level."
 
     rsmText .= "`n`nData Engineering, Analytics, and Operations:"
     rsmText .= "`n- Real-time anomaly-detection and notification bots using asynchronous updates."
@@ -448,3 +497,4 @@ PasteText(text) {
 
     PasteText(wpptxt)
 }
+```

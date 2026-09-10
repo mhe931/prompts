@@ -19,7 +19,12 @@ function parseFrontMatter(content) {
     if (idx <= 0) continue;
     const key = line.slice(0, idx).trim();
     const value = line.slice(idx + 1).trim();
-    if (key && value) meta[key] = value;
+    if (!key || !value) continue;
+    if (value.startsWith('[') && value.endsWith(']')) {
+      meta[key] = value.slice(1, -1).split(',').map((tag) => tag.trim().replace(/^["']|["']$/g, '')).filter(Boolean);
+    } else {
+      meta[key] = value.replace(/^["']|["']$/g, '');
+    }
   }
   return { meta, body: content.slice(end + 5) };
 }
@@ -50,6 +55,14 @@ for (const abs of files) {
   const category = parts[1] || 'other';
   const content = await fs.readFile(abs, 'utf8');
   const { meta } = parseFrontMatter(content);
+  for (const field of ['name', 'description', 'tags', 'category']) {
+    if (meta[field] === undefined || meta[field] === '') {
+      throw new Error(`${rel}: missing frontmatter field "${field}"`);
+    }
+  }
+  if (meta.category !== category) {
+    throw new Error(`${rel}: frontmatter category must be "${category}"`);
+  }
   const file = path.basename(rel);
   const slug = file.replace(/\.[^.]+$/, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
   items.push({
@@ -58,8 +71,10 @@ for (const abs of files) {
     category,
     file,
     path: rel,
-    title: meta.title || titleFromFile(file),
-    description: meta.description || ''
+    name: meta.name,
+    title: meta.name || titleFromFile(file),
+    description: meta.description,
+    tags: Array.isArray(meta.tags) ? meta.tags : [meta.tags]
   });
 }
 items.sort((a, b) => a.category.localeCompare(b.category) || a.title.localeCompare(b.title));
