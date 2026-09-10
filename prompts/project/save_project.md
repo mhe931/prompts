@@ -2,7 +2,7 @@
 name: Save Project Status to Memory
 description: Persist the current project status to project memory so a new session can resume without prior chat history.
 tags: [continuity, memory, session-handoff]
-category: coding
+category: project
 model: gpt-4o-mini
 tools: [read, edit]
 ---

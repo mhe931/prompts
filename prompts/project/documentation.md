@@ -2,7 +2,7 @@
 name: Repository Documentation Audit and Continuity Owner
 description: Audit and complete a project's documentation end-to-end so a new developer, stakeholder, or AI agent can operate and continue it without prior chat history.
 tags: [documentation, agents-md, project-continuity, technical-writing]
-category: coding
+category: project
 model: claude-3.5-sonnet
 tools: [read, grep, edit, terminal, git, webFetch]
 ---

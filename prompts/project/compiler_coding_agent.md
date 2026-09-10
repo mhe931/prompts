@@ -2,7 +2,7 @@
 name: Coding Agent Prompt Compiler
 description: Compile a preceding implementation task into one concise execution prompt for a primary coding agent with end-to-end ownership.
 tags: [prompt-engineering, coding-agent, orchestration, meta-prompt]
-category: coding
+category: project
 model: gpt-4o
 tools: []
 ---

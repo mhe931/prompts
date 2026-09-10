@@ -2,7 +2,7 @@
 name: Universal Prompt Compiler
 description: Compile a preceding conversation's task into one optimized, execution-ready prompt for a target AI system.
 tags: [prompt-engineering, meta-prompt, compiler]
-category: coding
+category: project
 model: gpt-4o
 tools: []
 ---

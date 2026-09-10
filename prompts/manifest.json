@@ -1,13 +1,14 @@
 {
-  "generatedAt": "2026-09-10T15:26:05.261Z",
+  "generatedAt": "2026-09-10T15:36:57.810Z",
   "categories": [
     "coding",
     "other",
     "presentations",
+    "project",
     "research",
     "writing"
   ],
-  "count": 14,
+  "count": 15,
   "prompts": [
     {
       "id": "coding/code-review",
@@ -23,85 +24,6 @@
         "security",
         "refactoring",
         "testing",
-        "agent"
-      ]
-    },
-    {
-      "id": "coding/prompt-for-agent",
-      "slug": "prompt-for-agent",
-      "category": "coding",
-      "file": "prompt_for_agent.md",
-      "path": "prompts/coding/prompt_for_agent.md",
-      "name": "Coding Agent Prompt Compiler",
-      "title": "Coding Agent Prompt Compiler",
-      "description": "Compile a preceding implementation task into one concise execution prompt for a primary coding agent with end-to-end ownership.",
-      "tags": [
-        "prompt-engineering",
-        "coding-agent",
-        "orchestration",
-        "meta-prompt"
-      ]
-    },
-    {
-      "id": "coding/documentation",
-      "slug": "documentation",
-      "category": "coding",
-      "file": "documentation.md",
-      "path": "prompts/coding/documentation.md",
-      "name": "Repository Documentation Audit and Continuity Owner",
-      "title": "Repository Documentation Audit and Continuity Owner",
-      "description": "Audit and complete a project's documentation end-to-end so a new developer, stakeholder, or AI agent can operate and continue it without prior chat history.",
-      "tags": [
-        "documentation",
-        "agents-md",
-        "project-continuity",
-        "technical-writing"
-      ]
-    },
-    {
-      "id": "coding/save-project",
-      "slug": "save-project",
-      "category": "coding",
-      "file": "save_project.md",
-      "path": "prompts/coding/save_project.md",
-      "name": "Save Project Status to Memory",
-      "title": "Save Project Status to Memory",
-      "description": "Persist the current project status to project memory so a new session can resume without prior chat history.",
-      "tags": [
-        "continuity",
-        "memory",
-        "session-handoff"
-      ]
-    },
-    {
-      "id": "coding/prompt",
-      "slug": "prompt",
-      "category": "coding",
-      "file": "prompt.md",
-      "path": "prompts/coding/prompt.md",
-      "name": "Universal Prompt Compiler",
-      "title": "Universal Prompt Compiler",
-      "description": "Compile a preceding conversation's task into one optimized, execution-ready prompt for a target AI system.",
-      "tags": [
-        "prompt-engineering",
-        "meta-prompt",
-        "compiler"
-      ]
-    },
-    {
-      "id": "coding/initial-project",
-      "slug": "initial-project",
-      "category": "coding",
-      "file": "initial_project.md",
-      "path": "prompts/coding/initial_project.md",
-      "name": "Windows Gesture-Controlled Virtual Mouse Bootstrap",
-      "title": "Windows Gesture-Controlled Virtual Mouse Bootstrap",
-      "description": "Bootstrap a production-quality, camera-based hand-gesture mouse controller for Windows with an architecture reusable for a later Android phase.",
-      "tags": [
-        "computer-vision",
-        "windows",
-        "project-bootstrap",
-        "gesture-control",
         "agent"
       ]
     },
@@ -182,6 +104,100 @@
         "presentations",
         "executive-summary",
         "strategy"
+      ]
+    },
+    {
+      "id": "project/compiler-coding-agent",
+      "slug": "compiler-coding-agent",
+      "category": "project",
+      "file": "compiler_coding_agent.md",
+      "path": "prompts/project/compiler_coding_agent.md",
+      "name": "Coding Agent Prompt Compiler",
+      "title": "Coding Agent Prompt Compiler",
+      "description": "Compile a preceding implementation task into one concise execution prompt for a primary coding agent with end-to-end ownership.",
+      "tags": [
+        "prompt-engineering",
+        "coding-agent",
+        "orchestration",
+        "meta-prompt"
+      ]
+    },
+    {
+      "id": "project/create-agents-md",
+      "slug": "create-agents-md",
+      "category": "project",
+      "file": "create_agents_md.md",
+      "path": "prompts/project/create_agents_md.md",
+      "name": "Create AGENTS.md",
+      "title": "Create AGENTS.md",
+      "description": "Generate or repair an authoritative AGENTS.md so any future coding agent can operate on this repository correctly without prior chat history.",
+      "tags": [
+        "agents-md",
+        "documentation",
+        "project-continuity",
+        "agent-instructions"
+      ]
+    },
+    {
+      "id": "project/project-initiation",
+      "slug": "project-initiation",
+      "category": "project",
+      "file": "project_initiation.md",
+      "path": "prompts/project/project_initiation.md",
+      "name": "General-Purpose Project Initiation",
+      "title": "General-Purpose Project Initiation",
+      "description": "Bootstrap a new greenfield software project end-to-end - stack selection, repository scaffolding, documentation, git workflow, and testing setup - without hardcoded domain specifics.",
+      "tags": [
+        "project-bootstrap",
+        "scaffolding",
+        "agent",
+        "sdd"
+      ]
+    },
+    {
+      "id": "project/documentation",
+      "slug": "documentation",
+      "category": "project",
+      "file": "documentation.md",
+      "path": "prompts/project/documentation.md",
+      "name": "Repository Documentation Audit and Continuity Owner",
+      "title": "Repository Documentation Audit and Continuity Owner",
+      "description": "Audit and complete a project's documentation end-to-end so a new developer, stakeholder, or AI agent can operate and continue it without prior chat history.",
+      "tags": [
+        "documentation",
+        "agents-md",
+        "project-continuity",
+        "technical-writing"
+      ]
+    },
+    {
+      "id": "project/save-project",
+      "slug": "save-project",
+      "category": "project",
+      "file": "save_project.md",
+      "path": "prompts/project/save_project.md",
+      "name": "Save Project Status to Memory",
+      "title": "Save Project Status to Memory",
+      "description": "Persist the current project status to project memory so a new session can resume without prior chat history.",
+      "tags": [
+        "continuity",
+        "memory",
+        "session-handoff"
+      ]
+    },
+    {
+      "id": "project/compiler-general-ai",
+      "slug": "compiler-general-ai",
+      "category": "project",
+      "file": "compiler_general_ai.md",
+      "path": "prompts/project/compiler_general_ai.md",
+      "name": "Universal Prompt Compiler",
+      "title": "Universal Prompt Compiler",
+      "description": "Compile a preceding conversation's task into one optimized, execution-ready prompt for a target AI system.",
+      "tags": [
+        "prompt-engineering",
+        "meta-prompt",
+        "compiler"
       ]
     },
     {
