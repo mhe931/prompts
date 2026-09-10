@@ -3,6 +3,8 @@ name: AutoHotkey Clipboard Prompt Launcher
 description: Maintain an AutoHotkey v2 script that expands hotstrings into full prompt texts and pastes them via the clipboard.
 tags: [autohotkey, automation, windows, prompt-engineering, utility-script]
 category: other
+model: claude-3.5-sonnet
+tools: [read, edit]
 ---
 
 ## GOAL
@@ -20,6 +22,9 @@ The script runs under AutoHotkey v2 on Windows and is triggered by typing a hots
 - Cancel cleanly (return without pasting) when an InputBox is dismissed with Cancel or left blank where a value is required.
 - Do not remove or weaken the accuracy, ethics, or scope-limiting language embedded in the generated prompts (for example the resume prompt's anti-fabrication rules).
 - Keep the script self-contained AutoHotkey v2 syntax; do not introduce external dependencies.
+- Do not edit files outside the workspace root or unrelated prompt files when synchronizing embedded prompt text.
+- Do not overwrite uncommitted user modifications in this file or the standalone prompt files it mirrors; diff before writing.
+- Do not invent AutoHotkey v2 functions, directives, or built-in variables; verify against the AutoHotkey v2 documentation before use.
 
 ## EXECUTION
 

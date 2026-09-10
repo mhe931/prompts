@@ -3,6 +3,8 @@ name: General Purpose Assistant Prompt Template
 description: A fill-in-the-blank template for drafting a task-specific assistant prompt with role, context, constraints, and output format.
 tags: [template, meta-prompt, general-purpose]
 category: other
+model: user-selected
+tools: []
 ---
 
 ## GOAL
@@ -17,6 +19,8 @@ Fill in this template to produce a complete, task-specific prompt for a general-
 
 - [List constraints: things to avoid, required accuracy/safety rules, scope limits, or tone restrictions.]
 - Do not invent facts, sources, or capabilities not supported by the provided context.
+- Do not edit files, execute commands, or take workspace actions unless the filled-in prompt explicitly grants that tool scope.
+- Do not overwrite uncommitted user work if this template is adapted for a coding or editing task.
 
 ## EXECUTION
 

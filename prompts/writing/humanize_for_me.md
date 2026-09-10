@@ -3,6 +3,8 @@ name: Humanize Academic Writing Voice
 description: Rewrite academic text in the natural, human voice of an international graduate student, avoiding AI-sounding phrasing.
 tags: [writing-style, academic-writing, voice]
 category: writing
+model: gpt-4o
+tools: []
 ---
 
 ## GOAL
@@ -18,6 +20,7 @@ The output is for academic discussion or coursework and must not sound machine-g
 - Avoid robotic transitions, exaggerated vocabulary, and generic AI-style phrasing.
 - Avoid unnecessary bullet points unless they genuinely improve clarity.
 - Do not alter the factual/technical content of the source text beyond style and phrasing.
+- Do not invent citations, data, or claims not present in the source text.
 
 ## EXECUTION
 

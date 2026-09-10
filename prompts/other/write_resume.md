@@ -3,6 +3,8 @@ name: Tailored Resume and Job Application Package
 description: Generate an evidence-based, ATS-optimized resume, cover letter, interview prep, and salary assessment tailored to a specific job posting.
 tags: [resume, job-application, career, ats]
 category: other
+model: gpt-4o
+tools: [webFetch]
 ---
 
 ## GOAL
@@ -46,6 +48,8 @@ Input required from the user: TARGET JOB DESCRIPTION, COMPANY CONTEXT, OR URL - 
 - Use direct, modern, natural, Master degree-level professional English in a confident but credible tone.
 - Avoid generic AI language, inflated adjectives, and cliches such as pioneered, tapestry, cutting-edge, world-class, revolutionary, visionary, game-changing, or similar wording, and empty claims such as results-driven, dynamic professional, proven track record, and passionate about technology unless supported by evidence.
 - Prefer concise sentences, strong verbs, specific technologies, business context, and measurable outcomes, suitable for a Finnish or international European employer.
+- Do not fetch or write to any location other than the reference profile links and the job posting URL supplied by the user; do not browse unrelated sites.
+- Do not overwrite or discard the user's original job description/URL input; treat it as the authoritative source for tailoring.
 
 ## EXECUTION
 

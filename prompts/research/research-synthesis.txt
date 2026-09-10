@@ -3,6 +3,8 @@ name: Research Synthesis Brief
 description: Synthesize 5-8 sources on a topic into a structured summary highlighting consensus, disagreement, and evidence quality.
 tags: [research, synthesis, literature-review]
 category: research
+model: o3-mini
+tools: [webSearch, webFetch]
 ---
 
 ## GOAL
@@ -17,6 +19,7 @@ The synthesis draws on 5-8 sources supplied or discoverable by the assistant. It
 
 - Only summarize claims that are traceable to a specific source; do not fabricate sources, findings, or statistics.
 - Clearly separate consensus from disagreement and note when evidence is weak or contested.
+- Do not cite a source without retrieving or being given its actual content; do not invent DOIs, authors, or publication venues.
 
 ## EXECUTION
 

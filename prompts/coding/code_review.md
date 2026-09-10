@@ -3,6 +3,8 @@ name: Autonomous Code Review and Remediation
 description: Drive an end-to-end code review that inspects a codebase, fixes confirmed defects, adds regression tests, and delivers an evidence-based report.
 tags: [code-review, security, refactoring, testing, agent]
 category: coding
+model: claude-3.5-sonnet
+tools: [read, grep, edit, terminal, git, testRunner]
 ---
 
 ## GOAL
@@ -18,12 +20,16 @@ Take end-to-end ownership of improving the target codebase as lead software engi
 
 ## GUARDRAILS
 
+- Start every review in read-only mode: use `read`/`grep` tools to inspect before any `edit`; do not modify a file until the finding that justifies the change has been confirmed against actual code, not assumption.
 - Personally verify every finding before acting on it; integrate all accepted changes yourself to prevent conflicting edits.
 - Distinguish confirmed defects from risks, hypotheses, and optional improvements. Do not fabricate vulnerabilities, benchmarks, test results, file references, or successful operations.
 - Do not expose or commit secrets, credentials, private data, generated caches, or unnecessary build artifacts.
 - Avoid speculative rewrites and unrelated cosmetic changes; preserve compatibility unless a change is necessary and documented.
 - Never force-push shared history, overwrite unrelated work, bypass required checks, or claim remote actions succeeded without verification.
 - If hardware or external services are unavailable, maximize automated coverage and provide exact manual validation steps instead.
+- Do not edit files outside the workspace root or outside the scope of the repository under review.
+- Do not overwrite uncommitted user modifications; if the working tree is dirty on entry, stash-aware inspect it first and preserve it.
+- Do not invent third-party library APIs, method signatures, or configuration flags; verify against installed package versions, lockfiles, or official documentation before citing them.
 
 ## EXECUTION
 
@@ -63,8 +69,8 @@ Do not declare completion while important failures remain unexplained.
 Return a concise but complete report containing:
 
 1. **Outcome** - overall status and what was fixed.
-2. **Critical findings** - severity, evidence, affected file/line, impact, and resolution.
-3. **Changes made** - grouped by correctness, security, performance, maintainability, tests, and documentation.
+2. **Critical findings** - a severity-ranked table (Critical > High > Medium > Low) with evidence, affected file/line, impact, and resolution for each finding, most severe first.
+3. **Changes made** - a diff-level summary grouped by correctness, security, performance, maintainability, tests, and documentation; note which changes were read-only findings versus applied edits.
 4. **Verification** - exact commands and results.
 5. **Git/PR** - branch, commits, PR, merge, and final repository state.
 6. **Remaining risks** - only genuine unresolved issues or manual validation needs.

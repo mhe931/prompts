@@ -3,6 +3,8 @@ name: Blog Post Brief
 description: Generate a concise one-page blog post brief with audience, message, outline, and distribution framing.
 tags: [content-strategy, blog, brief]
 category: writing
+model: gpt-4o-mini
+tools: []
 ---
 
 ## GOAL
@@ -15,7 +17,7 @@ The brief supports a content team deciding whether and how to write a blog post;
 
 ## GUARDRAILS
 
-Keep the brief to one page; avoid generic filler language and unsupported claims about audience or performance.
+Keep the brief to one page; avoid generic filler language and unsupported claims about audience or performance. Do not invent audience research, analytics, or performance data not supplied by the user.
 
 ## EXECUTION
 

@@ -3,6 +3,8 @@ name: Windows Idle-Prevention Mouse Jiggler Script
 description: Generate a Windows batch launcher and PowerShell script that subtly moves the mouse to prevent idle/lock without disrupting active user input.
 tags: [automation, powershell, windows, utility-script]
 category: other
+model: gpt-4o-mini
+tools: [edit]
 ---
 
 ## GOAL
@@ -19,6 +21,8 @@ The utility runs on a Windows machine and must work unattended in the background
 - Keep movements small and always restore the cursor to its original position at the end of each cycle.
 - Do not perform any action other than cursor movement and an optional harmless keypress (for example F15) to signal activity.
 - Do not log, transmit, or store any information about user activity beyond what is needed to run the loop.
+- Do not invent Windows API calls or .NET methods beyond System.Windows.Forms and System.Drawing; verify signatures before use.
+- Do not write files outside the target script/launcher pair or overwrite unrelated scripts in the destination directory.
 
 ## EXECUTION
 

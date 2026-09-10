@@ -3,6 +3,8 @@ name: Executive Deck Outline
 description: Produce a 10-slide executive presentation structure covering a problem, strategic options, recommendation, risks, and a 30-60-90 day plan.
 tags: [presentations, executive-summary, strategy]
 category: presentations
+model: gpt-4o-mini
+tools: []
 ---
 
 ## GOAL
@@ -17,6 +19,7 @@ The audience is executive stakeholders who need a concise strategic narrative ra
 
 - Keep the outline to 10 slides; do not pad with filler slides.
 - Base options and risks on the information provided; flag unsupported assumptions explicitly instead of inventing data.
+- Do not fabricate market data, competitor names, or financial figures not supplied by the user.
 
 ## EXECUTION
 
