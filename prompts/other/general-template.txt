@@ -3,6 +3,8 @@ name: General Purpose Assistant Prompt Template
 description: A fill-in-the-blank template for drafting a task-specific assistant prompt with role, context, constraints, and output format.
 tags: [template, meta-prompt, general-purpose]
 category: other
+# category must match this file's immediate parent directory under prompts/
+# valid categories in this catalog are coding, other, presentations, project, research, writing
 model: user-selected
 tools: []
 ---

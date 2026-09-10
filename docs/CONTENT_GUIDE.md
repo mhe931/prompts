@@ -8,7 +8,7 @@
 
 `prompts/<category>/<file>.md|txt`
 
-Default categories: coding, writing, research, presentations, other.
+Default categories: coding, other, presentations, project, research, writing.
 
 ## Metadata (optional)
 Use front matter:

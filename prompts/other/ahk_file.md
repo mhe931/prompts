@@ -13,7 +13,7 @@ Build and maintain an AutoHotkey v2 script that expands short hotstrings into co
 
 ## CONTEXT
 
-The script runs under AutoHotkey v2 on Windows and is triggered by typing a hotstring (for example hmn, rsm, sss, prm, wpp) in any text field. Each hotstring builds a full prompt string in memory and hands it to a shared PasteText helper, which places the text on the clipboard and sends Ctrl+V. Some hotstrings (rsm, prm, wpp) first collect one piece of user input via InputBox (job description/URL, or target application/agent name) and interpolate it into the generated prompt. The prompt bodies embedded in this script correspond to the standalone prompts write_resume.md, save_project.md, prompt.md, prompt_for_agent.md, and humanize_for_me.md elsewhere in this library; keep their wording synchronized when either side changes.
+The script runs under AutoHotkey v2 on Windows and is triggered by typing a hotstring (for example hmn, rsm, sss, prm, wpp) in any text field. Each hotstring builds a full prompt string in memory and hands it to a shared PasteText helper, which places the text on the clipboard and sends Ctrl+V. Some hotstrings (rsm, prm, wpp) first collect one piece of user input via InputBox (job description/URL, or target application/agent name) and interpolate it into the generated prompt. The prompt bodies embedded in this script correspond to the standalone prompts other/write_resume.md, project/save_project.md, project/compiler_general_ai.md, project/compiler_coding_agent.md, and writing/humanize_for_me.md elsewhere in this library; keep their wording synchronized when either side changes.
 
 ## GUARDRAILS
 
@@ -32,10 +32,10 @@ The script runs under AutoHotkey v2 on Windows and is triggered by typing a hots
 2. Implement each hotstring as its own block:
    - hmn: pastes the human-academic-writing-style prompt directly.
    - rsm: prompts for a job description/URL via InputBox, builds the full tailored resume/cover-letter/interview/salary prompt (matching other/write_resume.md), appends the captured job description, and pastes it.
-   - sss: pastes the fixed save-project-status prompt directly.
-   - prm: prompts for a target application/model via InputBox (defaulting to "use the current AI system/model" if blank), builds the universal prompt-compiler prompt (matching coding/prompt.md), and pastes it.
-   - wpp: prompts for a target coding agent/environment via InputBox (defaulting to "use the current coding agent/environment" if blank), builds the coding-agent prompt-compiler prompt (matching coding/prompt_for_agent.md), and pastes it.
-3. When adding a new hotstring, follow the same pattern: collect only the minimum required input, build the text with string concatenation, and end with a call to PasteText.
+   - sss: pastes the fixed save-project-status prompt directly (matching project/save_project.md).
+   - prm: prompts for a target application/model via InputBox (defaulting to "use the current AI system/model" if blank), builds the universal prompt-compiler prompt (matching project/compiler_general_ai.md), and pastes it.
+   - wpp: prompts for a target coding agent/environment via InputBox (defaulting to "use the current coding agent/environment" if blank), builds the coding-agent prompt-compiler prompt (matching project/compiler_coding_agent.md), and pastes it.
+3. When adding a new hotstring, follow the same pattern: collect only the minimum required input, build the text with string concatenation, and end with a call to PasteText (for example, a future `ini` hotstring could mirror project/project_initiation.md).
 4. Keep this file and the corresponding standalone prompt files consistent; update both sides when the wording of a shared prompt changes.
 
 ## VERIFICATION
@@ -322,6 +322,7 @@ PasteText(text) {
 ; =========================================================
 ; HOTSTRING: sss
 ; save current status for AIs
+; mirrors project/save_project.md
 ; =========================================================
 
 ::sss::
@@ -336,6 +337,7 @@ PasteText(text) {
 ; =========================================================
 ; HOTSTRING: prm
 ; Context-Aware Universal Prompt Compiler
+; mirrors project/compiler_general_ai.md
 ; AutoHotkey v2
 ; =========================================================
 
@@ -410,6 +412,7 @@ PasteText(text) {
 ; =========================================================
 ; HOTSTRING: wpp
 ; Context-Aware Coding / Agent Prompt Compiler
+; mirrors project/compiler_coding_agent.md
 ; AutoHotkey v2
 ; =========================================================
 

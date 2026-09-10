@@ -16,6 +16,7 @@ Production-quality lightweight prompt-library site for GitHub Pages.
 ## Content management
 
 - Add prompt files under `prompts/<category>/` as `.md` or `.txt`.
+- Active categories: `coding`, `other`, `presentations`, `project`, `research`, `writing`.
 - Every prompt must include front matter with `name`, `description`, `tags`, and `category`.
 - Every prompt body must contain `GOAL`, `CONTEXT`, `GUARDRAILS`, `EXECUTION`, `VERIFICATION`, and `OUTPUT FORMAT` sections.
 - The category must match the prompt's immediate parent directory.
