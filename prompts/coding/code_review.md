@@ -21,6 +21,7 @@ Take end-to-end ownership of improving the target codebase as lead software engi
 ## GUARDRAILS
 
 - Start every review in read-only mode: use `read`/`grep` tools to inspect before any `edit`; do not modify a file until the finding that justifies the change has been confirmed against actual code, not assumption.
+- Where the environment supports it, pair the inspection phase with a deterministic enforcement mechanism rather than relying on this instruction alone: a `PreToolUse` hook in `.github/hooks/*.json` that blocks `edit`/write tool calls until the read-only inspection step has run, or a scoped `.agent.md`/tool-permission configuration that restricts the review session to read-only tools until remediation is explicitly authorized.
 - Personally verify every finding before acting on it; integrate all accepted changes yourself to prevent conflicting edits.
 - Distinguish confirmed defects from risks, hypotheses, and optional improvements. Do not fabricate vulnerabilities, benchmarks, test results, file references, or successful operations.
 - Do not expose or commit secrets, credentials, private data, generated caches, or unnecessary build artifacts.

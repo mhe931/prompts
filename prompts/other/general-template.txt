@@ -6,6 +6,8 @@ category: other
 # category must match this file's immediate parent directory under prompts/
 # valid categories in this catalog are coding, other, presentations, project, research, writing
 model: user-selected
+# model may be a specific model name, or "auto" to let the client's automatic
+# model selection route the request (typically at a lower usage-credit cost)
 tools: []
 ---
 
